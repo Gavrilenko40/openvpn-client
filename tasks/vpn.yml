@@ -4,10 +4,5 @@
       register: openvpn_installed
       notify: 
           - openvpn start
-   
-   # - name: Install easy rsa
-    #  apt: pkg=easy-rsa state=latest
-     # notify:
-      #    - openvpn start
-
+          
     - include: config.yml
