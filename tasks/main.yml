@@ -1,3 +1,2 @@
 ---
     - include: vpn.yml
-      tags: [openvpn]
