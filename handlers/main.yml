@@ -1,0 +1,6 @@
+---
+    - name: openvpn start
+      service: name=openvpn state=started
+    - name: openvpn  restart
+      service: name=openvpn state=restarted
+

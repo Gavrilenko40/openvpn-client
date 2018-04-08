@@ -1,0 +1,19 @@
+#!/bin/bash
+
+# First argument: Client identifier
+
+KEY_DIR=~/openvpn-ca/keys
+OUTPUT_DIR=~/openvpn_configs_dir/
+BASE_CONFIG=~/openvpn_configs_dir/base.conf
+
+cat ${BASE_CONFIG} \
+    <(echo -e '<ca>') \
+    ${KEY_DIR}/ca.crt \
+    <(echo -e '</ca>\n<cert>') \
+    ${KEY_DIR}.crt \
+    <(echo -e '</cert>\n<key>') \
+    ${KEY_DIR}/{{openvpn_clients}}.key \
+    <(echo -e '</key>\n<tls-auth>') \
+    ${KEY_DIR}/ta.key \
+    <(echo -e '</tls-auth>') \
+    > ${OUTPUT_DIR}/config.conf

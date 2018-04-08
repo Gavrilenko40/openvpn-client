@@ -1,0 +1,15 @@
+---
+    - name: Install OpenVpn 
+      apt: pkg=openvpn state=latest
+      register: openvpn_installed
+    - name: Install easy rsa
+      apt: pkg=easy-rsa state=latest
+      notify:
+          - openvpn start
+
+    - name: Add OpenVpn config
+      
+      template: src=config.conf dest=/etc/openvpn/config.conf 
+      notify:
+          - openvpn restart
+
