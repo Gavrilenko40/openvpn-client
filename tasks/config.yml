@@ -14,8 +14,7 @@
 - name: Generate config
   command: "{{ openvpn_etcdir }}/genconf.sh"
   
-#- name: Add conf to client
- # template: src=config.conf dest={{ openvpn_etcdir }}/base.conf
-  #notify:
-#      - openvpn restart
+- name: Restart
+  notify:
+     - openvpn restart
 
