@@ -6,6 +6,6 @@
       shell: apt-get update
       
     - name: Install OpenVpn 
-      apt: pkg=openvpn state=stable
+      apt: pkg=openvpn state=latest
       notify: 
           - openvpn start
