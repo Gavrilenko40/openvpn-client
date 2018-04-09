@@ -3,7 +3,7 @@
 - Install and setup openvpn 
 - Create clients configuration file
 ### Variables
-<code>
+<pre>
    #settings
  openvpn_etcdir: /etc/openvpn             # openvpn dir
  openvpn_server_addr: 192.168.252.128     # The server address
@@ -24,12 +24,12 @@
  client_key:                              # <-
  tls_auth_key:                            # <-
  # <-
-</code>
+</pre>
 
 ### Usage 
-<code>
+<pre>
 - hosts: all
   roles:
   - openvpn-client
     vars: 
-    </code>
+    </pre>
