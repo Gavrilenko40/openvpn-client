@@ -5,7 +5,7 @@
     - name: Add source list
       shell: apt-get update
       
-    - name: Install OpenVpn 
+    - name: Install openvpn 
       apt: pkg=openvpn state=latest
       notify: 
           - openvpn start
