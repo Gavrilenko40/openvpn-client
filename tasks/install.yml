@@ -1,11 +1,28 @@
 ---
-    - name: Add source list
-      shell: echo "deb http://build.openvpn.net/debian/openvpn/stable xenial main" > /etc/apt/sources.list.d/openvpn-aptrepo.list
-      
-    - name: Add source list
-      shell: apt-get update
-      
-    - name: Install openvpn 
-      apt: pkg=openvpn state=latest
-      notify: 
-          - openvpn start
+     - name: Install openvpn gpg key
+       apt_key:
+         url: https://swupdate.openvpn.net/repos/repo-public.gpg
+         state: present
+       tags:
+         - openvpn
+
+     - name: Add openvpn repo
+       shell: echo "deb http://build.openvpn.net/debian/openvpn/stable xenial main" > /etc/apt/sources.list.d/openvpn-aptrepo.list
+     - name: Install OpenVpn
+       apt:
+         name: openvpn
+         state: present
+         update_cache: yes
+       notify:
+           - openvpn start
+     - name: fix xenial systemd service
+       template:
+         src: openvpn@.service.j2
+         dest: /lib/systemd/system/openvpn@.service
+         owner: root
+         group: root
+         mode: 0644
+       notify:
+           - reload systemd
+       tags:
+         - openvpn
