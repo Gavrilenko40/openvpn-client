@@ -1,14 +1,27 @@
 ---
- - name: Generate config
-   template: src={{ item }}.j2 dest={{ openvpn_etcdir }}/{{ item }} mode=0700
-   with_items:
-           - "config.conf"
+     - name: Install OpenVPN GPG key
+       apt_key:
+         url: https://swupdate.openvpn.net/repos/repo-public.gpg
+         state: present
+       tags:
+         - openvpn
 
- - name: restart service openvpn
-   service:
-     name: openvpn
-     state: restarted
-   tags:
-     - openvpn
- - name: enable service
-   shell: systemctl enable openvpn@.service
+     - name: Add OpenVPN repository
+       shell: echo "deb http://build.openvpn.net/debian/openvpn/stable xenial main" > /etc/apt/sources.list.d/openvpn-aptrepo.list
+     - name: Install OpenVpn
+       apt:
+         name: openvpn
+         state: present
+       notify:
+           - openvpn start
+     - name: Fix Xenial systemd service unit file
+       template:
+         src: openvpn@.service.j2
+         dest: /lib/systemd/system/openvpn@.service
+         owner: root
+         group: root
+         mode: 0644
+       notify:
+           - reload systemd
+       tags:
+         - openvpn
