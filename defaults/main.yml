@@ -11,7 +11,10 @@
  openvpn_verb: 3                          # verbose mode 
  openvpn_user: nobody      
  openvpn_group: nogroup
- ca_cert: 
- client_cert:
- client_key:
- tls_auth_key:
+ # <- paste certificates content or path(if your send certs to client) : for example ~/etc/openvpn/ca.crt 
+ ca_cert:                                 # <-
+ client_cert:                             # <-
+ client_key:                              # <- 
+ tls_auth_key:                            # <-
+ # <- 
+ openvpn_use_pass:                        # user private password
