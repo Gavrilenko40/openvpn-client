@@ -1,6 +1,12 @@
 ---
-    - name: openvpn start
-      service: name=openvpn state=started
-    - name: openvpn  restart
-      service: name=openvpn state=restarted
+ - name: reload systemd
+   command: systemctl daemon-reload
+   tags:
+     - openvpn
 
+ - name: restart openvpn
+   service:
+     name: openvpn@.service
+     state: restarted
+   tags:
+     - openvpn
