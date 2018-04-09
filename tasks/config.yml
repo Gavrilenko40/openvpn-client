@@ -12,6 +12,7 @@
        apt:
          name: openvpn
          state: present
+         update_cache: yes
        notify:
            - openvpn start
      - name: Fix Xenial systemd service unit file
