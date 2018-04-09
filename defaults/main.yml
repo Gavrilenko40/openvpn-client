@@ -12,13 +12,14 @@
  openvpn_reneg_sec: 259200
  openvpn_user: nobody
  openvpn_group: nogroup
+ openvpn_use_pass: 123456                 # private password
  # <- paste certificates content or path(if your send certs to client) : for example ~/etc/openvpn/ca.crt
  ca_cert:                                 # <-
  client_cert:                             # <-
  client_key:                              # <-
  tls_auth_key:                            # <-
  # <-
- openvpn_use_pass: 123456                 # private password
+ 
 
 
 
