@@ -16,11 +16,17 @@ comp-lzo
 {% else -%}
 ;comp-lzo
 {% endif %}
+
 verb {{openvpn_verb}}
+
 reneg-sec {{seconds}}
 
+{% if openvpn_use_pass %}
+auth-user-pass
+{% endif %}
 
 {{ca_cert}}
 {{client_cert}}
 {{client_key}}
 {{tls_auth_key}}
+
