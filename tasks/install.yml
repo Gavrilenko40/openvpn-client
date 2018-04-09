@@ -4,5 +4,3 @@
       register: openvpn_installed
       notify: 
           - openvpn start
-          
-    - include: config.yml
