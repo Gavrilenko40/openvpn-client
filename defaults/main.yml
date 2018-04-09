@@ -17,4 +17,4 @@
  client_key:                              # <- 
  tls_auth_key:                            # <-
  # <- 
- openvpn_use_pass:                        # user private password
+ openvpn_use_pass: 123456                 # private password
