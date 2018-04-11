@@ -3,7 +3,7 @@
   roles:
   - openvpn-client
   vars:
-    ca_cert: "-----BEGIN OpenVPN Static key V1-----
+    tls_auth_key: "-----BEGIN OpenVPN Static key V1-----
 3786eec0f1fc78915b9883f065b84c86
 ad1370c2596e47cdf57a7e66b17e220c
 d9d4b2367c43bb6dc86e0e5f506df2ce
