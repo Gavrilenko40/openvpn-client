@@ -7,7 +7,7 @@
        notify:
            - openvpn start
        tags: 
-         - openvpn start 
+         - openvpn install
          
      - name: fix xenial systemd service
        template:
