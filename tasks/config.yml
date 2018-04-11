@@ -1,10 +1,10 @@
 ---
  - name: Generate config
-   template: src={{ item }}.j2 dest={{ openvpn_conf_dir }}/{{ item }} mode=0700
+   template: src={{ item }}.j2 dest=/etc/openvpn/{{ item }} mode=0700
    with_items:
            - "config.conf"
    tags: 
-     - openvpn config
+     - openvpn configFile Send
 
  - name: restart service openvpn
    service:
@@ -15,9 +15,7 @@
      
  - name: enable service
    service: 
-        name: "openvpn@{{openvpn_conf_dir}}/{{item}}"
-        with_items:
-                - "config.conf"
+        name: "openvpn@config.conf"
         enabled: yes
    tags:
-     - openvpn enable 
+     - openvpn enable service
