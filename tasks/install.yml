@@ -1,7 +1,7 @@
 ---
      - name: Install OpenVpn
        apt:
-         pkg: openvpn_2.4*
+         name: openvpn=2.4.*
          state: installed
          update_cache: yes
        notify:
