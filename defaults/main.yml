@@ -1,7 +1,7 @@
 ---
- ca_cert: "/etc/openvpn/ca.crt"                      
- client_cert: "/etc/openvpn/client1.crt"                             
- client_key: "/etc/openvpn/client1.key"                        
+ ca_cert: "ca.crt"                      
+ client_cert: "client1.crt"                             
+ client_key: "client1.key"                        
  openvpn_comp_lzo: "yes"                    # Enable compression yes or no
  openvpn_device: "tun"                      # Virtual network driver TUN or TAP
  openvpn_group: "nogroup"
@@ -13,7 +13,7 @@
  openvpn_status: "openvpn-status.log"       # status log of openvpn service
  openvpn_user: "nobody"
  openvpn_verb: "3"                          # verbose mode
- tls_auth_key: "/etc/openvpn/ta.key"
+ tls_auth_key: "ta.key"
 
 
 
