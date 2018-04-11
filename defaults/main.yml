@@ -1,5 +1,6 @@
 ---
  #default settings
+ openvpn_conf_dir: /etc/openvpn/          # config.conf dir
  openvpn_server_addr: 192.168.252.128     # The server address
  openvpn_port: 1194                       # The server port
  openvpn_protocol: udp                    # Protocol , use udp or tcp
@@ -12,7 +13,7 @@
  openvpn_user: nobody
  openvpn_group: nogroup
  openvpn_use_pass: 123456                 # private password
- # <- paste certificates content or path(if your send certs to client) : for example ~/etc/openvpn/ca.crt
+ # <- paste certificates content 
  ca_cert:                                 # <-
  client_cert:                             # <-
  client_key:                              # <-
