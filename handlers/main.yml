@@ -1,14 +1,14 @@
 ---
  - name: openvpn service start
    service:
-      name: "openvpn@"{{openvpn_conf_dir}}
+      name: "openvpn@config.conf"
       state: started
    tags:
      - openvpn start
 
  - name: openvpn service restart
    service:
-     name: "openvpn@"{{openvpn_conf_dir}}
+     name: "openvpn@config.conf"
      state: restarted
    tags:
      - openvpn restart
