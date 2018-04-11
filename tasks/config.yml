@@ -15,4 +15,5 @@
      
  - name: enable service
    shell: systemctl enable openvpn@.service
-   tags: openvpn enable 
+   tags:
+     - openvpn enable 
