@@ -11,7 +11,6 @@
  openvpn_reneg_sec: 259200
  openvpn_user: nobody
  openvpn_group: nogroup
- openvpn_use_pass: 123456                 # private password
  # <- paste certificates content 
  ca_cert:                                 # <-
  client_cert:                             # <-
