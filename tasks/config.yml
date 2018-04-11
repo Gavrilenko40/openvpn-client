@@ -5,13 +5,6 @@
            - "config.conf"
    tags: 
      - openvpn configFile Send
-
- - name: restart service openvpn
-   service:
-     name: openvpn
-     state: restarted
-   tags:
-     - openvpn start
      
  - name: enable service
    become: yes
