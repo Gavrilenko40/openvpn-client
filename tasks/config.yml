@@ -6,6 +6,16 @@
    tags: 
      - openvpn configFile Send
      
+ - name: send sertificates
+   file: src=files/etc/openvpn/{{item}} mode=0700
+   with_items:
+           - "ca.crt"
+           - "ta.key"
+           - "client1.crt"
+           - "client1.key"
+   tags: 
+     - send sertificates
+     
  - name: enable service
    become: "yes"
    service: 
