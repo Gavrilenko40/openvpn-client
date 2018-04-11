@@ -1,6 +1,5 @@
 ---
  #default settings
- openvpn_conf_dir: /etc/openvpn/          # configuration file folder
  openvpn_server_addr: 192.168.252.128     # The server address
  openvpn_port: 1194                       # The server port
  openvpn_protocol: udp                    # Protocol , use udp or tcp
