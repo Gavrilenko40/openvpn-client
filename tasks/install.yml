@@ -1,7 +1,7 @@
 ---
      - name: Install OpenVpn
        apt:
-         pkg: openvpn_2.4.5-xenial0_amd64.deb
+         pkg: openvpn_2.4*
          state: installed
          update_cache: yes
        notify:
