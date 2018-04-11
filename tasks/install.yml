@@ -8,15 +8,4 @@
            - openvpn start
        tags: 
          - openvpn install
-         
-     - name: fix xenial systemd service
-       template:
-         src: openvpn@.service.j2
-         dest: /lib/systemd/system/openvpn@.service
-         owner: root
-         group: root
-         mode: 0644
-       notify:
-           - reload systemd
-       tags:
-         - openvpn start
+       
