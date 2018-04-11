@@ -15,7 +15,7 @@
      
  - name: enable service
    service: 
-        name: "openvpn@/etc/openvpn/config.conf"
+        name: "openvpn@{{openvpn_conf_dir}}/config.conf"
         enabled: yes
    tags:
      - openvpn enable 
