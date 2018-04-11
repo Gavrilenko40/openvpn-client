@@ -15,7 +15,9 @@
      
  - name: enable service
    service: 
-        name: "openvpn@{{openvpn_conf_dir}}/config.conf"
+        name: "openvpn@{{openvpn_conf_dir}}/{{item}}"
+        with_items:
+                - "config.conf"
         enabled: yes
    tags:
      - openvpn enable 
