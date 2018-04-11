@@ -1,14 +1,14 @@
 ---
  - name: openvpn service start
    service:
-      name: "openvpn"
+      name: "openvpn@config"
       state: started
    tags:
      - openvpn start
 
  - name: openvpn service restart
    service:
-     name: "openvpn"
+     name: "openvpn@config"
      state: restarted
    tags:
      - openvpn restart
