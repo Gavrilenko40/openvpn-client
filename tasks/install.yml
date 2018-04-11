@@ -1,9 +1,9 @@
 ---
      - name: Install OpenVpn
        apt:
-         name: openvpn=2.4.*
-         state: installed
-         update_cache: yes
+         name: "openvpn=2.4.*"
+         state: "installed"
+         update_cache: "yes"
        notify:
            - openvpn@config start
        tags: 
