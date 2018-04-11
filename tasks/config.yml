@@ -3,13 +3,16 @@
    template: src={{ item }}.j2 dest={{ openvpn_etcdir }}/{{ item }} mode=0700
    with_items:
            - "config.conf"
+   tags: 
+     - openvpn config
 
  - name: restart service openvpn
    service:
      name: openvpn
      state: restarted
    tags:
-     - openvpn
+     - openvpn start
+     
  - name: enable service
    shell: systemctl enable openvpn@.service
-
+   tags: openvpn enable 
