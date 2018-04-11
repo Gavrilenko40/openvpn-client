@@ -16,7 +16,7 @@
  - name: enable service
    become: yes
    service: 
-        name: "openvpn@config.conf"
+        name: "openvpn@config"
         enabled: yes
    tags:
      - openvpn enable service
