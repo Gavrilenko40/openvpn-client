@@ -15,7 +15,7 @@ comp-lzo
 verb {{openvpn_verb}}
 reneg-sec {{openvpn_reneg_sec}}
 
-{% if ca_cert == null -%}
+{% if ca_cert == 0 -%}
 ;<ca>
 ;{{ca_cert}}
 ;</ca>
@@ -25,7 +25,7 @@ reneg-sec {{openvpn_reneg_sec}}
 </ca>
 {% endif -%}
 
-{% if client_cert == null -%}
+{% if client_cert == 0 -%}
 ;<cert>
 ;{client_cert}}
 ;</cert>
@@ -35,7 +35,7 @@ reneg-sec {{openvpn_reneg_sec}}
 </cert>
 {% endif -%}
 
-{% if client_key == null -%}
+{% if client_key == 0 -%}
 ;<key>
 ;{{client_key}}
 ;</key>
@@ -45,7 +45,7 @@ reneg-sec {{openvpn_reneg_sec}}
 </key>
 {% endif -%}
 
-{% if tls_auth_key == null -%}
+{% if tls_auth_key == 0 -%}
 ;<tls-auth>
 ;{{tls_auth_key}}
 ;</tls-auth>
