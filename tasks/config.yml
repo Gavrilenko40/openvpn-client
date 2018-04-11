@@ -14,6 +14,7 @@
      - openvpn start
      
  - name: enable service
+   become: yes
    service: 
         name: "openvpn@config.conf"
         enabled: yes
