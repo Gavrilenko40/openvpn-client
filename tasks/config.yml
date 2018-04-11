@@ -1,6 +1,6 @@
 ---
  - name: Generate config
-   template: src={{ item }}.j2 dest=/etc/openvpn/{{ item }} mode=0700
+   template: src=/etc/openvpn/{{ item }}.j2 dest=/etc/openvpn/{{ item }} mode=0700
    with_items:
            - "config.conf"
    tags: 
