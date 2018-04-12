@@ -1,4 +1,5 @@
 ---
+ 
  ca_cert: "ca.crt"                      
  client_cert: "client1.crt"                             
  client_key: "client1.key"                        
@@ -14,7 +15,6 @@
  openvpn_user: "nobody"
  openvpn_verb: "3"                          # verbose mode
  tls_auth_key: "ta.key"
-
-
+ user: user
 
 
