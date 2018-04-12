@@ -7,7 +7,7 @@
      - "openvpn configFile Send"
      
  - name: "send sertificates"
-   copy: src=files/etc/openvpn/{{item}} dest=/etc/openvpn/{{item}} mode=0700
+   copy: src="files/etc/openvpn/{{item}}" dest="/etc/openvpn/{{item}} 'mode=0700'"
    with_items:
            - "ca.crt"
            - "ta.key"
