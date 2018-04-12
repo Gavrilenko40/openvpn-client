@@ -21,23 +21,23 @@ reneg-sec "{{openvpn_reneg_sec}}"
 {% if ca_cert == "" -%}
 ;{{ca_cert}}
 {% else -%}
-{{ca_cert}}
+ca {{ca_cert}}
 {% endif -%}
 
 {% if client_cert == ""-%}
 ;{client_cert}}
 {% else -%}
-{{client_cert}}
+cert {{client_cert}}
 {% endif -%}
 
 {% if client_key == "" -%}
 ;{{client_key}}
 {% else -%}
-{{client_key}}
+key {{client_key}}
 {% endif -%}
 
 {% if tls_auth_key == "" -%}
 ;{{tls_auth_key}}
 {% else -%}
-{{tls_auth_key}}
+tls-auth {{tls_auth_key}}
 {% endif -%}
