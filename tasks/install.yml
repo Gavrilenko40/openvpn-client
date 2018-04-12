@@ -1,5 +1,6 @@
 ---
      - name: Install OpenVpn
+       become_user: {{user}}
        apt:
          name: "openvpn=2.4.*"
          state: "installed"
