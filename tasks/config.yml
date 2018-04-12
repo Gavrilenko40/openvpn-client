@@ -1,6 +1,5 @@
 ---
  - name: Generate config
-   become_user: {{user}}
    template: src=templates/etc/openvpn/{{ item }}.j2 dest=/etc/openvpn/{{ item }} mode=0700
    with_items:
            - "config.conf"
@@ -18,7 +17,6 @@
      - send sertificates
      
  - name: enable service
-   become_user: {{user}}
    service: 
         name: "openvpn@config"
         enabled: "yes"
