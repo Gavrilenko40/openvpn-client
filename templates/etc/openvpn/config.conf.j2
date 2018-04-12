@@ -1,11 +1,11 @@
 #{{ ansible_managed }}
 client
 nobind
-dev "{{openvpn_device}}"
+dev {{openvpn_device}}
 remote-cert-tls server
-remote "{{openvpn_server_addr}} {{openvpn_port}}"
+remote {{openvpn_server_addr}} {{openvpn_port}}
 key-direction 1
-proto "{{openvpn_protocol}}"
+proto {{openvpn_protocol}}
 cipher AES-128-CBC
 
 auth SHA256
@@ -15,8 +15,8 @@ comp-lzo
 {% else -%}
 ;comp-lzo
 {% endif %}
-verb "{{openvpn_verb}}"
-reneg-sec "{{openvpn_reneg_sec}}"
+verb {{openvpn_verb}}
+reneg-sec {{openvpn_reneg_sec}}
 
 {% if ca_cert == "" -%}
 ;{{ca_cert}}
