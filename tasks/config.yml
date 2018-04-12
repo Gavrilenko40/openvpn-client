@@ -1,13 +1,13 @@
 ---
  - name: "Generate config"
-   template: src="templates/etc/openvpn/{{ item }}.j2" dest="/etc/openvpn/{{ item }} 'mode=0700'"
+   template: src="templates/etc/openvpn/{{ item }}.j2" dest="/etc/openvpn/{{ item }} mode=0700"
    with_items:
            - "config.conf"
    tags: 
      - "openvpn configFile Send"
      
  - name: "send sertificates"
-   copy: src="files/etc/openvpn/{{item}}" dest="/etc/openvpn/{{item}} 'mode=0700'"
+   copy: src="files/etc/openvpn/{{item}}" dest="/etc/openvpn/{{item}} mode=0700"
    with_items:
            - "ca.crt"
            - "ta.key"
