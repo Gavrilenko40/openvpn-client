@@ -1,11 +1,11 @@
 ---
-     - name: Install OpenVpn
+     - name: "openvpn install"
        apt:
          name: "openvpn=2.4.*"
          state: "installed"
          update_cache: "yes"
        notify:
-           - openvpn@config start
+           - "openvpn@config start"
        tags: 
-         - openvpn install
+         - "openvpn install"
        
