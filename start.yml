@@ -1,6 +1,6 @@
 # test file
 - hosts: web1
   remote_user: user
-  remote_pass: 123456
+  remote_user_pass: 123456
   roles:
   - openvpn-client
