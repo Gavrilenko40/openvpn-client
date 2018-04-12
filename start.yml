@@ -1,4 +1,5 @@
 # test file
 - hosts: web1
+  remote_user: user
   roles:
   - openvpn-client
