@@ -1,4 +1,4 @@
-### Ansible role - openvpn-client
+### Ansible role - openvpn-client  ----- Not finished yet !!!!!!! 
 - Ansible role which install and configure OpenVpn on Ubuntu 
 - Install and setup openvpn 
 - Create clients configuration file
